@@ -1,6 +1,6 @@
 import numpy as np
 
-from tonic import replays
+from tonic.tonic import replays
 
 
 class Segment:

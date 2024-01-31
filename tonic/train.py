@@ -3,7 +3,7 @@
 import argparse
 import os
 
-import tonic
+import tonic.tonic
 import yaml
 
 
@@ -19,18 +19,18 @@ def train(
 
     checkpoint_path = None
 
-    # Process the checkpoint path same way as in tonic.play
+    # Process the checkpoint path same way as in tonic.tonic.play
     if path:
-        tonic.logger.log(f'Loading experiment from {path}')
+        tonic.tonic.logger.log(f'Loading experiment from {path}')
 
         # Use no checkpoint, the agent is freshly created.
         if checkpoint == 'none' or agent is not None:
-            tonic.logger.log('Not loading any weights')
+            tonic.tonic.logger.log('Not loading any weights')
 
         else:
             checkpoint_path = os.path.join(path, 'checkpoints')
             if not os.path.isdir(checkpoint_path):
-                tonic.logger.error(f'{checkpoint_path} is not a directory')
+                tonic.tonic.logger.error(f'{checkpoint_path} is not a directory')
                 checkpoint_path = None
 
             # List all the checkpoints.
@@ -54,12 +54,12 @@ def train(
                         checkpoint_path = os.path.join(
                             checkpoint_path, f'step_{checkpoint_id}')
                     else:
-                        tonic.logger.error(f'Checkpoint {checkpoint_id} '
+                        tonic.tonic.logger.error(f'Checkpoint {checkpoint_id} '
                                            f'not found in {checkpoint_path}')
                         checkpoint_path = None
 
             else:
-                tonic.logger.error(f'No checkpoint found in {checkpoint_path}')
+                tonic.tonic.logger.error(f'No checkpoint found in {checkpoint_path}')
                 checkpoint_path = None
 
         # Load the experiment configuration.
@@ -80,13 +80,13 @@ def train(
 
     # Build the training environment.
     _environment = environment
-    environment = tonic.environments.distribute(
+    environment = tonic.tonic.environments.distribute(
         lambda: eval(_environment), parallel, sequential)
     environment.initialize(seed=seed)
 
     # Build the testing environment.
     _test_environment = test_environment if test_environment else _environment
-    test_environment = tonic.environments.distribute(
+    test_environment = tonic.tonic.environments.distribute(
         lambda: eval(_test_environment))
     test_environment.initialize(seed=seed + 10000)
 
@@ -116,10 +116,10 @@ def train(
         if parallel != 1 or sequential != 1:
             name += f'-{parallel}x{sequential}'
     path = os.path.join(environment_name, name, str(seed))
-    tonic.logger.initialize(path, script_path=__file__, config=args)
+    tonic.tonic.logger.initialize(path, script_path=__file__, config=args)
 
     # Build the trainer.
-    trainer = trainer or 'tonic.Trainer()'
+    trainer = trainer or 'tonic.tonic.Trainer()'
     trainer = eval(trainer)
     trainer.initialize(
         agent=agent, environment=environment,

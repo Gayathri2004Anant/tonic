@@ -1,7 +1,7 @@
 import torch
 
-from tonic import logger  # noqa
-from tonic.torch import agents, updaters
+from tonic.tonic import logger  # noqa
+from tonic.tonic.torch import agents, updaters
 
 
 class PPO(agents.A2C):

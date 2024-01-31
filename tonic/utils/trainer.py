@@ -3,7 +3,7 @@ import time
 
 import numpy as np
 
-from tonic import logger
+from tonic.tonic import logger
 
 
 class Trainer:

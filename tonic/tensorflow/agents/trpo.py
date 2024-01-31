@@ -1,7 +1,7 @@
 import tensorflow as tf
 
-from tonic import logger
-from tonic.tensorflow import agents, updaters
+from tonic.tonic import logger
+from tonic.tonic.tensorflow import agents, updaters
 
 
 class TRPO(agents.A2C):

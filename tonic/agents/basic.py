@@ -2,7 +2,7 @@
 
 import numpy as np
 
-from tonic import agents
+from tonic.tonic import agents
 
 
 class NormalRandom(agents.Agent):

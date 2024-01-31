@@ -5,8 +5,8 @@ import os
 import gym.wrappers
 import numpy as np
 
-from tonic import environments
-from tonic.utils import logger
+from tonic.tonic import environments
+from tonic.tonic.utils import logger
 
 
 def gym_environment(*args, **kwargs):

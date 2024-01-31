@@ -1,6 +1,6 @@
 import tensorflow as tf
 
-from tonic.tensorflow import updaters
+from tonic.tonic.tensorflow import updaters
 
 
 class VRegression:

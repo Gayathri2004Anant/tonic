@@ -1,5 +1,5 @@
-from tonic import logger
-from tonic.tensorflow import agents, models, normalizers, updaters
+from tonic.tonic import logger
+from tonic.tonic.tensorflow import agents, models, normalizers, updaters
 
 
 def default_model():

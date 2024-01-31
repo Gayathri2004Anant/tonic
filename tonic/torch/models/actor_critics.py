@@ -2,7 +2,7 @@ import copy
 
 import torch
 
-from tonic.torch import models  # noqa
+from tonic.tonic.torch import models  # noqa
 
 
 class ActorCritic(torch.nn.Module):

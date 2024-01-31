@@ -13,7 +13,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
 
-from tonic import logger
+from tonic.tonic import logger
 
 
 def smooth(vals, window):
@@ -175,12 +175,12 @@ def get_data(
     if baselines:
         full_benchmark = len(paths) == 0
         path = __file__
-        tonic_path = os.path.split(os.path.split(path)[0])[0]
+        tonic.tonic_path = os.path.split(os.path.split(path)[0])[0]
 
         # Find the benchmark data to use.
         if baselines_source == 'tensorflow':
             logger.log('Loading TensorFlow baselines...')
-            path = os.path.join(tonic_path, 'data/logs/tensorflow_logs.pkl')
+            path = os.path.join(tonic.tonic_path, 'data/logs/tensorflow_logs.pkl')
             print('Path:', path)
         else:
             logger.log(f'Loading baselines from {baselines_source}...')

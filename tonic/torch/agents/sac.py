@@ -1,7 +1,7 @@
 import torch
 
-from tonic import explorations  # noqa
-from tonic.torch import agents, models, normalizers, updaters
+from tonic.tonic import explorations  # noqa
+from tonic.tonic.torch import agents, models, normalizers, updaters
 
 
 def default_model():

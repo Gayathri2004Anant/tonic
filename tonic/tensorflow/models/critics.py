@@ -1,6 +1,6 @@
 import tensorflow as tf
 
-from tonic.tensorflow import models
+from tonic.tonic.tensorflow import models
 
 
 class ValueHead(tf.keras.Model):

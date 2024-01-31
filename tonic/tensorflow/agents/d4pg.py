@@ -1,5 +1,5 @@
-from tonic import replays
-from tonic.tensorflow import agents, models, normalizers, updaters
+from tonic.tonic import replays
+from tonic.tonic.tensorflow import agents, models, normalizers, updaters
 
 
 def default_model():

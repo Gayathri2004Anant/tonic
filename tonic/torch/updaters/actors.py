@@ -1,6 +1,6 @@
 import torch
 
-from tonic.torch import models, updaters  # noqa
+from tonic.tonic.torch import models, updaters  # noqa
 
 
 FLOAT_EPSILON = 1e-8

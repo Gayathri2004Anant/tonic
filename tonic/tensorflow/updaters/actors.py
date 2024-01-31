@@ -2,7 +2,7 @@ import numpy as np
 import tensorflow as tf
 import tensorflow_probability as tfp
 
-from tonic.tensorflow import updaters
+from tonic.tonic.tensorflow import updaters
 
 
 FLOAT_EPSILON = 1e-8

@@ -1,7 +1,7 @@
 import tensorflow as tf
 
-from tonic import logger, replays
-from tonic.tensorflow import agents, models, normalizers, updaters
+from tonic.tonic import logger, replays
+from tonic.tonic.tensorflow import agents, models, normalizers, updaters
 
 
 def default_model():

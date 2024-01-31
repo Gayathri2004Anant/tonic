@@ -3,7 +3,7 @@ import random
 import numpy as np
 import tensorflow as tf
 
-from tonic import agents, logger
+from tonic.tonic import agents, logger
 
 
 class Agent(agents.Agent):

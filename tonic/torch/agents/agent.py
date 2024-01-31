@@ -4,7 +4,7 @@ import random
 import numpy as np
 import torch
 
-from tonic import agents, logger  # noqa
+from tonic.tonic import agents, logger  # noqa
 
 
 class Agent(agents.Agent):
